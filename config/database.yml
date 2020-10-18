@@ -1,10 +1,26 @@
 
+# development:
+#   database: Chatter_dev
+#   adapter: mysql2
+#   encoding: utf8
+#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+#   username: root
+#   password: password
+#   host: localhost
+#   socket: /var/run/mysqld/mysqld.sock
+
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: 5
+
 development:
+  <<: *default
   database: Chatter_dev
-  adapter: mysql2
-  encoding: utf8
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root
-  password: password
+  username: kalyan
+  password: kalyan
   host: localhost
-  socket: /var/run/mysqld/mysqld.sock
+  port: 5432
